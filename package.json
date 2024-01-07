@@ -1,0 +1,26 @@
+{
+    "name": "bandada-nodejs",
+    "packageManager": "yarn@3.6.2",
+    "scripts": {
+        "bandada": "ts-node src/bandada-sdk.ts",
+        "lint": "eslint . --ext .js,.ts && yarn lint",
+        "prettier": "prettier -c .",
+        "prettier:write": "prettier -w ."
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.6",
+        "@typescript-eslint/eslint-plugin": "^6.18.0",
+        "@typescript-eslint/parser": "^6.18.0",
+        "eslint": "^8.56.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^17.1.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "prettier": "^3.1.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "@bandada/api-sdk": "^1.0.0-beta.1"
+    }
+}
