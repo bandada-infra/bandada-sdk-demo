@@ -1,13 +1,13 @@
-# Bandada in Node.js
+# Bandada SDK Demo
 
-This is an example of project using [Bandada](https://bandada.pse.dev/) in Node.js.
+This is an example of project using the [Bandada SDK](https://github.com/privacy-scaling-explorations/bandada/tree/main/libs/api-sdk).
 
 ## Run Locally
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/vplasencia/bandada-nodejs.git
+git clone https://github.com/vplasencia/bandada-sdk-demo.git
 ```
 
 ### Install dependencies
