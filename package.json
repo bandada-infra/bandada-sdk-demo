@@ -3,7 +3,7 @@
     "packageManager": "yarn@3.6.2",
     "scripts": {
         "bandada": "ts-node src/bandada-sdk.ts",
-        "lint": "eslint . --ext .js,.ts && yarn lint",
+        "lint": "eslint . --ext .js,.ts",
         "prettier": "prettier -c .",
         "prettier:write": "prettier -w ."
     },
@@ -22,6 +22,6 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@bandada/api-sdk": "^1.0.0-beta.1"
+        "@bandada/api-sdk": "^1.0.0"
     }
 }
