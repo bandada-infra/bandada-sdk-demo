@@ -1,6 +1,5 @@
 {
     "name": "bandada-nodejs",
-    "packageManager": "yarn@3.6.2",
     "scripts": {
         "bandada": "ts-node src/bandada-sdk.ts",
         "lint": "eslint . --ext .js,.ts",
@@ -8,6 +7,7 @@
         "prettier:write": "prettier -w ."
     },
     "devDependencies": {
+        "@types/figlet": "^1.5.8",
         "@types/node": "^20.10.6",
         "@typescript-eslint/eslint-plugin": "^6.18.0",
         "@typescript-eslint/parser": "^6.18.0",
@@ -22,6 +22,10 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@bandada/api-sdk": "^1.0.0"
-    }
+        "@bandada/api-sdk": "^1.0.0",
+        "chalk": "^4",
+        "figlet": "^1.7.0",
+        "node-emoji": "^2.1.3"
+    },
+    "packageManager": "yarn@4.1.0"
 }

@@ -1,38 +1,64 @@
-# Bandada SDK Demo
+<p align="center">
+    <h1 align="center">
+      Bandada SDK Demo
+    </h1>
+</p>
 
-This is an example of project using the [Bandada SDK](https://github.com/privacy-scaling-explorations/bandada/tree/main/libs/api-sdk).
+![]()
 
-## Run Locally
+| Simple and intuitive demonstration of interaction with Bandada's off-chain groups. |
+| ---------------------------------------------------------------------------------- |
 
-### Clone the Repository
+This example script uses the [Bandada API SDK](https://github.com/privacy-scaling-explorations/bandada/tree/main/libs/api-sdk) to interact with a pre-existing off-chain group.
+
+In one-click you will be able to print group information, add or remove members, and create a merkle inclusion proof. This proof is a zero-knowledge proof that verifies a user's membership in the group without revealing their identity.
+
+To learn more about Bandada, please visit the [repository](https://github.com/privacy-scaling-explorations/bandada) and [documentation](https://pse-team.notion.site/Bandada-82d0d9d3c6b64b7bb2a09d4c7647c083?pvs=4).
+
+## 🛠 Installation
+
+Clone this repository:
 
 ```bash
 git clone https://github.com/vplasencia/bandada-sdk-demo.git
 ```
 
-### Install dependencies
+and install the dependencies:
 
 ```bash
-yarn
+cd bandada-sdk-demo && yarn
 ```
 
-### Add the environment variables
+## 🔧 Configuration
 
-1. Copy the `.env.example` file to a new file named `.env`:
+Copy the `.env.example` file to a new file named `.env`:
 
 ```bash
 cp .env.example .env
 ```
 
-2. Create a new Bandada off-chain group using the Bandada Dashboard: [https://bandada.pse.dev](https://bandada.pse.dev).
+You must have created a Bandada off-chain group through the [Bandada Dashboard](https://bandada.pse.dev) in order to correctly populate the environment variables (see the GIF below).
 
-3. Update each environment variable name with the correct value using the [Bandada Dashboard](https://bandada.pse.dev).
+```bash
+# The unique identifier of the Group.
+GROUP_ID="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+# The API Key of the Group.
+GROUP_API_KEY="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+# A valid invite code to join the Group.
+MEMBER_INVITE_CODE="XXXXXXXX"
+```
 
-### Run the bandada-sdk file
+![]()
+
+## 📜 Usage
+
+Use the following command to run the script:
 
 ```bash
 yarn bandada
 ```
+
+## 👨‍💻 Contributing
 
 ### Code quality and formatting
 
@@ -53,3 +79,7 @@ Or to automatically format the code:
 ```bash
 yarn prettier:write
 ```
+
+## 🚨 Troubleshooting
+
+After successfully running the script for the first time, if you try to run it again, you will receive the error message `400 - Bad Request - Invite code 'XXXXXX' has already been redeemed``. To resolve this issue, you just need to generate a new invite code. That's it ✨
