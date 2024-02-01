@@ -23,7 +23,7 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@bandada/api-sdk": "^1.0.0",
+        "@bandada/api-sdk": "^1.1.0",
         "chalk": "^4",
         "figlet": "^1.7.0",
         "node-emoji": "^2.1.3"
