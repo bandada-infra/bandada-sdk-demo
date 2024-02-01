@@ -10,8 +10,6 @@
 !.yarn/cache
 #.pnp.*
 
-.yarn
 node_modules
-snark-artifacts
 
 .env
