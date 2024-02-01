@@ -5,7 +5,7 @@ import * as emoji from "node-emoji"
 import "dotenv/config"
 
 // Theme.
-const log = console.log
+const { log } = console
 const bandadaPrimaryBold = chalk.hex("#E4CCFF").bold
 const cloudEmoji = emoji.get("sun_behind_large_cloud")
 const birdEmoji = emoji.get("bird")
