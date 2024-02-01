@@ -4,7 +4,7 @@
     </h1>
 </p>
 
-![Bandada_SDK_DEMO_ScriptExec.webm](https://github.com/0xjei/bandada-sdk-demo/assets/20580910/c868374a-a7d9-458c-b00e-d8a8d0224a92)
+[Bandada_SDK_DEMO_ScriptExec.webm](https://github.com/0xjei/bandada-sdk-demo/assets/20580910/c868374a-a7d9-458c-b00e-d8a8d0224a92)
 
 | Simple and intuitive demonstration of interaction with Bandada's off-chain groups. |
 | ---------------------------------------------------------------------------------- |
