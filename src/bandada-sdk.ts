@@ -118,7 +118,7 @@ async function main() {
      * removeMembersByApiKey
      * Removes multiple members from a group using an API Key.
      */
-    const membersIdsToRemove = ["2", "3", "4", "5", "6", "7", "8", "9"]
+    const membersIdsToRemove = ["2", "3", "4"]
     await apiSdk.removeMembersByApiKey(groupId, membersIdsToRemove, groupApiKey)
 
     log(`Removing members [${bandadaPrimaryBold(membersIdsToRemove)}] using an API Key`)
