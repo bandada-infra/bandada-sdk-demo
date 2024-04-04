@@ -12,12 +12,7 @@ const birdEmoji = emoji.get("bird")
 const circleEmoji = emoji.get("purple_heart")
 
 // Env.
-const groupId = process.env.GROUP_ID!
-const groupApiKey = process.env.GROUP_API_KEY!
-const memberInviteCode = process.env.MEMBER_INVITE_CODE!
-
-// Link to see the group info on the Bandada Dashboard
-const groupLink = `https://bandada.pse.dev/groups/off-chain/${groupId}`
+const adminApiKey = process.env.ADMIN_API_KEY!
 
 // Create a new instance of the Bandada SDK.
 const apiSdk = new ApiSdk()
@@ -33,13 +28,34 @@ async function main() {
     log(`${birdEmoji} There are currently ${bandadaPrimaryBold(groups.length)} off-chain groups`)
 
     /**
+     * createGroup
+     * Creates a new Bandada off-chain (non credential) group using the Admin API Key.
+     */
+    const group = await apiSdk.createGroup(
+        {
+            name: "My Off-Chain Bandada Group",
+            description: "This is an off-chain Bandada group",
+            treeDepth: 16,
+            fingerprintDuration: 3600
+        },
+        adminApiKey
+    )
+
+    // Get the group identifier.
+    const groupId = group.id
+    const groupLink = `https://bandada.pse.dev/groups/off-chain/${groupId}`
+
+    log(`\n${birdEmoji} Your group ${bandadaPrimaryBold(group.name)} (${bandadaPrimaryBold(groupId)}) has been created`)
+
+    /**
      * getGroup
      * Returns a specific group.
      */
     const { id, name, description, admin, treeDepth, fingerprintDuration, createdAt, members, credentials } =
         await apiSdk.getGroup(groupId)
-    log(`\n${circleEmoji} Bandada Group ${bandadaPrimaryBold(id)} (${bandadaPrimaryBold(groupLink)})`)
+    log(`\n${circleEmoji} You can have a look at it on the Bandada dashboard ${bandadaPrimaryBold(groupLink)}`)
     log(`\nGroup data:`)
+    log(`   Id: ${bandadaPrimaryBold(id)}`)
     log(`   Name: ${bandadaPrimaryBold(name)}`)
     log(`   Description: ${bandadaPrimaryBold(description)}`)
     log(`   Admin: ${bandadaPrimaryBold(admin)}`)
@@ -54,31 +70,20 @@ async function main() {
      * Adds a member to a group using an API Key.
      */
     const memberIdApiKey = "1"
-    await apiSdk.addMemberByApiKey(groupId, memberIdApiKey, groupApiKey)
+    await apiSdk.addMemberByApiKey(groupId, memberIdApiKey, adminApiKey)
 
     log(`\nAdding the member ${bandadaPrimaryBold(memberIdApiKey)} using an API Key`)
     log(`Group members: ${bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`)}`)
-
-    /**
-     * addMemberByInviteCode
-     * Adds a member to a group using an Invite Code.
-     * An invite code can be used to join a group only once and for one member.
-     */
-    const memberIdInviteCode = "2"
-    await apiSdk.addMemberByInviteCode(groupId, memberIdInviteCode, memberInviteCode)
-
-    log(`\nAdding the member '${bandadaPrimaryBold(memberIdInviteCode)}' using an invite Code`)
-    log(`Group members: `, bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`))
 
     /**
      * addMembersByApiKey
      * Adds multiple members to a group using an API Key.
      */
     const memberIds = []
-    for (let i = 3; i < 10; i += 1) {
+    for (let i = 2; i < 10; i += 1) {
         memberIds.push(i.toString())
     }
-    await apiSdk.addMembersByApiKey(groupId, memberIds, groupApiKey)
+    await apiSdk.addMembersByApiKey(groupId, memberIds, adminApiKey)
 
     log(`\nAdding members [${bandadaPrimaryBold(memberIds)}] using an API Key`)
     log(`Group members: ${bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`)}\n`)
@@ -109,7 +114,7 @@ async function main() {
      * Removes a member from a group using an API Key.
      */
     const memberIdToRemove = "1"
-    await apiSdk.removeMemberByApiKey(groupId, memberIdToRemove, groupApiKey)
+    await apiSdk.removeMemberByApiKey(groupId, memberIdToRemove, adminApiKey)
 
     log(`\nRemoving member '${bandadaPrimaryBold(memberIdToRemove)}' using an API Key`)
     log(`Group members: ${bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`)}\n`)
@@ -119,7 +124,7 @@ async function main() {
      * Removes multiple members from a group using an API Key.
      */
     const membersIdsToRemove = ["2", "3", "4"]
-    await apiSdk.removeMembersByApiKey(groupId, membersIdsToRemove, groupApiKey)
+    await apiSdk.removeMembersByApiKey(groupId, membersIdsToRemove, adminApiKey)
 
     log(`Removing members [${bandadaPrimaryBold(membersIdsToRemove)}] using an API Key`)
     log(`Group members: ${bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`)}\n`)
