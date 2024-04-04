@@ -37,18 +37,7 @@ Copy the `.env.example` file to a new file named `.env`:
 cp .env.example .env
 ```
 
-You must have created a Bandada off-chain group through the [Bandada Dashboard](https://bandada.pse.dev) in order to correctly populate the environment variables (see the GIF below).
-
-```bash
-# The unique identifier of the Group.
-GROUP_ID="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-# The API Key of the Group.
-GROUP_API_KEY="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-# A valid invite code to join the Group.
-MEMBER_INVITE_CODE="XXXXXXXX"
-```
-
-![]()
+You just need to activate your API key via the [Bandada Dashboard](https://bandada.pse.dev/groups) homepage. Then you need to copy & paste the key into the `ADMIN_API_KEY` environment variable.
 
 ## 📜 Usage
 
@@ -79,7 +68,3 @@ Or to automatically format the code:
 ```bash
 yarn prettier:write
 ```
-
-## 🚨 Troubleshooting
-
-After successfully running the script for the first time, if you try to run it again, you will receive the error message `400 - Bad Request - Invite code 'XXXXXX' has already been redeemed``. To resolve this issue, you just need to generate a new invite code. That's it ✨
