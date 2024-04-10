@@ -66,6 +66,30 @@ async function main() {
     log(`   Credentials: ${bandadaPrimaryBold(credentials)}`)
 
     /**
+     * updateGroup
+     * Updates a specific group.
+     */
+    const updatedGroupData = await apiSdk.updateGroup(
+        groupId,
+        {
+            description: "This is an off-chain Bandada group (upgraded 🚀)",
+            treeDepth: 32,
+            fingerprintDuration: 7200
+        },
+        adminApiKey
+    )
+    log(`\nUpdated Group data:`)
+    log(`   Id: ${bandadaPrimaryBold(updatedGroupData.id)}`)
+    log(`   Name: ${bandadaPrimaryBold(updatedGroupData.name)}`)
+    log(`   Description: ${bandadaPrimaryBold(updatedGroupData.description)}`)
+    log(`   Admin: ${bandadaPrimaryBold(updatedGroupData.admin)}`)
+    log(`   Tree depth: ${bandadaPrimaryBold(updatedGroupData.treeDepth)}`)
+    log(`   Fingerprint duration: ${bandadaPrimaryBold(updatedGroupData.fingerprintDuration)}`)
+    log(`   Created at: ${bandadaPrimaryBold(updatedGroupData.createdAt)}`)
+    log(`   Members: ${bandadaPrimaryBold(updatedGroupData.members.length === 0 ? "[]" : updatedGroupData.members)}`)
+    log(`   Credentials: ${bandadaPrimaryBold(updatedGroupData.credentials)}`)
+
+    /**
      * addMemberByApiKey
      * Adds a member to a group using an API Key.
      */
@@ -129,8 +153,17 @@ async function main() {
     log(`Removing members [${bandadaPrimaryBold(membersIdsToRemove)}] using an API Key`)
     log(`Group members: ${bandadaPrimaryBold(`[${(await apiSdk.getGroup(groupId)).members}]`)}\n`)
 
+    /**
+     * removeGroup
+     * Deletes a group.
+     */
+    await apiSdk.removeGroups([groupId], adminApiKey)
+
+    log(`Removing the group [${bandadaPrimaryBold(groupId)}] using an API Key`)
+    log(`Group [${bandadaPrimaryBold(groupId)}] successfully removed using an API Key`)
+
     log(
-        `${cloudEmoji}  You have ${bandadaPrimaryBold("successfully")} interacted with ${bandadaPrimaryBold("Bandada SDK")} ${cloudEmoji}`
+        `\n${cloudEmoji}  You have ${bandadaPrimaryBold("successfully")} interacted with ${bandadaPrimaryBold("Bandada SDK")} ${cloudEmoji}`
     )
 }
 
