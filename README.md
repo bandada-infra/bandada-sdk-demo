@@ -37,7 +37,7 @@ Copy the `.env.example` file to a new file named `.env`:
 cp .env.example .env
 ```
 
-You just need to activate your API key via the [Bandada Dashboard](https://bandada.pse.dev/groups) homepage. Then you need to copy & paste the key into the `ADMIN_API_KEY` environment variable.
+You just need to activate your API key via the [Bandada Dashboard](https://app.bandada.pse.dev/) homepage. Then you need to copy & paste the key into the `ADMIN_API_KEY` environment variable.
 
 ## 📜 Usage
 
