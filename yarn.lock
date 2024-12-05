@@ -12,18 +12,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bandada/api-sdk@npm:2.3.2":
-  version: 2.3.2
-  resolution: "@bandada/api-sdk@npm:2.3.2"
+"@bandada/api-sdk@npm:2.5.0":
+  version: 2.5.0
+  resolution: "@bandada/api-sdk@npm:2.5.0"
   dependencies:
-    "@bandada/utils": "npm:2.3.2"
-  checksum: 10c0/4bbb7272661521492a66d867aabcd5cbbf686cb6909e872e85288aadbe342fb1b1742f75d6d6d667d7163c03d823969ed94362e68a4c38a649fb539dbb40a8ab
+    "@bandada/utils": "npm:2.5.0"
+  checksum: 10c0/19567a1b2398762590cb24d0670c53fd5431f0f4ebc5cf828e3ac01074804c8835800b8d5ff5fddb3047fca2bf06e3f947c7f3bc53f368f7ec6328ea8ad759f2
   languageName: node
   linkType: hard
 
-"@bandada/utils@npm:2.3.2":
-  version: 2.3.2
-  resolution: "@bandada/utils@npm:2.3.2"
+"@bandada/utils@npm:2.5.0":
+  version: 2.5.0
+  resolution: "@bandada/utils@npm:2.5.0"
   dependencies:
     "@ethersproject/abstract-signer": "npm:^5.7.0"
     "@ethersproject/address": "npm:^5.7.0"
@@ -32,7 +32,7 @@ __metadata:
     "@ethersproject/strings": "npm:^5.7.0"
     "@ethersproject/wallet": "npm:^5.7.0"
     axios: "npm:^1.3.3"
-  checksum: 10c0/872aedc927151a8d5881067841bf72af575cdc16b5601e8c5d72f95b1c09fe6bba30c5c70809f507e39749b434f2d16156c895b27ca7da6003378de85aaaf481
+  checksum: 10c0/b8fff2c283ec3ea4d90aec889f84e0adba4b11c4f2b93fc844ba7e9e1f7597a0e7e4fe17640f8d1dcf39aaff1f7bbf428b1582c64507a67462e914df2b75f684
   languageName: node
   linkType: hard
 
@@ -934,7 +934,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bandada-nodejs@workspace:."
   dependencies:
-    "@bandada/api-sdk": "npm:2.3.2"
+    "@bandada/api-sdk": "npm:2.5.0"
     "@types/figlet": "npm:^1.5.8"
     "@types/node": "npm:^20.10.6"
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
